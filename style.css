@@ -164,15 +164,26 @@ a { color: #6c63ff; text-decoration: none; }
   border-radius: 12px;
   box-shadow: 0 0 25px #00d4ff;
 }
+
+/* Çarpı butonu */
 .close {
   position: absolute;
   top: 20px;
   right: 40px;
-  color: #fff;
+  color: #ffff00; /* Fosforlu sarı */
   font-size: 40px;
   cursor: pointer;
   z-index: 2100;
+  transition: color 0.3s;
+  background: none;   /* Arkaplan yok */
+  border: none;       /* Çerçeve yok */
+  padding: 0;         /* İç boşluk yok */
 }
+.close:hover {
+  color: #ffea00; /* Hover efekti için parlak sarı */
+}
+
+/* Modal Thumbnail */
 .modal-thumbnails { text-align: center; margin-top: 20px; }
 .modal-thumbnails img {
   width: 80px;
