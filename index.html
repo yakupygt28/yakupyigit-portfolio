@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yakup Yiğit - Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Yakup Yiğit</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hakkimda">Hakkımda</a></li>
+        <li><a href="#projeler">Projeler</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <div class="site-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="fade-in">Merhaba,<br/>Ben <span class="highlight">Yakup Yiğit</span></h1>
+        <p class="fade-in-delay">💻 Bilgisayar Mühendisi</p>
+        <a href="#projeler" class="btn">🚀 Projelerime Göz At</a>
+      </div>
+      <div class="hero-img">
+        <div class="glow-box">
+          <img src="profil.png" alt="Yakup Yiğit"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hakkımda -->
+    <section id="hakkimda" class="about">
+      <h2>✨ Hakkımda</h2>
+      <p>
+        Ben Yakup YİĞİT, Giresun’un Şebinkarahisar ilçesinde doğup büyüdüm. Liseye kadar eğitimimi burada tamamladıktan sonra, Tokat Gaziosmanpaşa Üniversitesi Bilgisayar Mühendisliği bölümünde lisans eğitimimi aldım. Yazılım geliştirme, mobil programlama ve yeni teknolojilere duyduğum ilgi ile farklı alanlarda projeler geliştirmekteyim. Web geliştirme, yapay zeka, oyun geliştirme ve mobil uygulama geliştirme konularında araştırmalar yaparak kendimi sürekli geliştirmeyi hedefliyorum. Gerçek dünyadaki problemlere yenilikçi çözümler üretmek en büyük motivasyonum. 
+        İlgi alanlarım; <span class="highlight">Web Geliştirme</span>, <span class="highlight">Yapay Zeka</span>, 
+        <span class="highlight">Oyun Geliştirme ve Programlama</span> ve <span class="highlight">Mobil Uygulama</span> geliştirme.
+      </p>
+      <ul class="skills">
+        <li>⚡ JavaScript</li>
+        <li>☕ Java</li>
+        <li>⚛️ C#</li>
+        <li>🔧 Python</li>
+        <li>🐳 Flutter</li>
+        <li>📐 HTML, CSS</li>
+      </ul>
+    </section>
+
+    <!-- Projeler -->
+    <section id="projeler" class="projects">
+      <h2>🚀 Projeler</h2>
+      <div class="project-grid">
+
+        <div class="project-card" data-images="project1.png,project2.png,project3.png,project4.png">
+          <img src="project1.png" alt="E-Ticaret Sitesi"/>
+          <h3>Tokat Belediyesi İstek ve Arıza Uygulaması</h3>
+          <p>Tokat Belediyesi için geliştirilmiş Flutter mobil uygulaması. Vatandaşların belediye hizmetlerine hızlı erişimini sağlar. Ana Menü ile temel hizmetlere erişim, arıza ve öneri bildirme, Tokat’ın gezilecek yerleri ve duyurular, yönetici paneli ile veri yönetimi.</p>
+          <a href="https://github.com/yakupygt28/Tokat-Belediyesi" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+
+        <div class="project-card" data-images="project50.png,project51.png,project52.png">
+          <img src="project50.png" alt="Mobil Uygulama"/>
+          <h3>Mobil Uygulama</h3>
+          <p>Android Studio ile geliştirilmiş kullanıcı dostu mobil uygulama. Giresun’un Şebinkarahisar ilçesinin yöresel yemeklerinin tanıtılması amaçlanmıştır.</p>
+          <a href="https://github.com" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+
+        <div class="project-card" data-images="project21.png,project22.png,project23.png,project24.png">
+          <img src="project21.png" alt="AI Chatbot"/>
+          <h3>AI Chatbot</h3>
+          <p>Blender ile yapılan yeryüzü tasarımı. Yapay zekâ ile kullanıcı etkileşimi sağlanmaktadır.</p>
+          <a href="https://github.com" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+
+        <div class="project-card" data-images="project30.png,project31.png,project32.png,project33.png,project34.png">
+          <img src="project34.png" alt="Mobil Uygulama"/>
+          <h3>Ev ve Eşya Tasarımı</h3>
+          <p>Bu 3D modeller, Blender kullanılarak tasarlanmıştır. Masa, koltuk ve diğer ev eşyaları, detaylı modelleme ve dokulama teknikleriyle gerçekçi bir görünüm kazanmıştır. Modeller, mimari görselleştirme, iç mekan tasarımı veya animasyon projelerinde kullanılabilir.</p>
+          <a href="https://github.com" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+
+        <div class="project-card" data-images="project40.png,project41.png,project54.png,project55.png">
+          <img src="project55.png" alt="Mobil Uygulama"/>
+          <h3>Karakter Tasarımı</h3>
+          <p>Bu karakter, Blender ile modelleme, rigleme ve animasyon süreçleri tamamlanarak hazırlanmıştır. Karakterin detaylı 3D modeli, dokular ve malzemeler kullanılarak gerçekçi bir görünüm kazanmıştır. Rig sistemi sayesinde yürüyüş, koşu, zıplama gibi animasyonlar uygulanabilir ve sahne içerisinde dinamik hareketler sergileyebilir.</p>
+          <a href="https://github.com" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+        <div class="project-card" data-images="project60.png,project61.png,project62.png,project63.png,project64.png,project65.png">
+          <img src="project61.png" alt="Mobil Uygulama"/>
+          <h3>2D Platform Oyunu</h3>
+          <p>Bu proje, Unity oyun motoru kullanılarak geliştirilmiş bir 2D platform oyunudur. Oyuncu karakteri, sağa ve sola hareket edebilir, zıplayabilir ve ekran sınırları içinde kontrol edilir. Karakter hareketleri ve zıplama, C# programlama dili ile yazılmış fizik tabanlı kontroller ve animasyon kodları sayesinde akıcı bir şekilde çalışır.</p>
+          <a href="https://github.com/yakupygt28/2D-Oyun" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+        <div class="project-card" data-images="project70.png,project71.png,project72.png,project73.png,project74.png">
+          <img src="project70.png" alt="Mobil Uygulama"/>
+          <h3>2D Platform Oyunu</h3>
+          <p>Bu proje, Unity oyun motoru kullanılarak geliştirilmiş bir 2D platform oyunudur. Oyuncu karakteri, sağa ve sola hareket edebilir, zıplayabilir ve ekran sınırları içinde kontrol edilir. Karakter hareketleri ve zıplama, C# programlama dili ile yazılmış fizik tabanlı kontroller ve animasyon kodları sayesinde akıcı bir şekilde çalışır.</p>
+          <a href="https://github.com/yakupygt28/-ebinkarahisar-y-resel-g-da-sat-web-sitesi" target="_blank" rel="noopener">🔗 GitHub</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modal Galeri -->
+    <div id="galleryModal" class="modal" aria-hidden="true">
+      <button class="close" aria-label="Kapat">&times;</button>
+      <span class="prev">&#10094;</span>
+      <img class="modal-content" id="modalImage" alt="Proje görseli"/>
+      <span class="next">&#10095;</span>
+      <div class="modal-thumbnails" id="modalThumbnails"></div>
+    </div>
+
+    <!-- İletişim -->
+    <section id="iletisim" class="contact">
+      <h2>📩 İletişim</h2>
+      <p>Bana ulaşmak için <a href="mailto:yakupyigitff@gmail.com">yakupyigitff@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <p>© 2025 Yakup Yiğit | Tüm Hakları Saklıdır</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
