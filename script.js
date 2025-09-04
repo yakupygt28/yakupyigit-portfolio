@@ -1,80 +1,122 @@
-// Navbar scroll efekti
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  navbar.style.background = "rgba(15, 15, 35, 0.95)";
-});
+// Dil verisi
+const translations = {
+  tr: {
+    nav_about: "Hakkımda",
+    nav_projects: "Projeler",
+    nav_contact: "İletişim",
+    hero_greeting: "Merhaba,<br>Ben <span class='highlight'>Yakup Yiğit</span>",
+    hero_subtitle: "💻 Bilgisayar Mühendisi",
+    hero_btn: "🚀 Projelerime Göz At",
+    about_title: "✨ Hakkımda",
+    about_text: "Ben Yakup YİĞİT, Giresun’un Şebinkarahisar ilçesinde doğup büyüdüm. Liseye kadar eğitimimi burada tamamladıktan sonra, Tokat Gaziosmanpaşa Üniversitesi Bilgisayar Mühendisliği bölümünde lisans eğitimimi aldım. Yazılım geliştirme, mobil programlama ve yeni teknolojilere duyduğum ilgi ile farklı alanlarda projeler geliştirmekteyim. Web geliştirme, yapay zeka, oyun geliştirme ve mobil uygulama geliştirme konularında araştırmalar yaparak kendimi sürekli geliştirmeyi hedefliyorum. Gerçek dünyadaki problemlere yenilikçi çözümler üretmek en büyük motivasyonum. İlgi alanlarım; Web Geliştirme, Yapay Zeka, Oyun Geliştirme ve Mobil Uygulama geliştirme.",
+    skills_js: "⚡ JavaScript",
+    skills_java: "☕ Java",
+    skills_csharp: "⚛️ C#",
+    skills_python: "🔧 Python",
+    skills_flutter: "🐳 Flutter",
+    skills_htmlcss: "📐 HTML, CSS",
+    contact_title: "📩 İletişim",
+    contact_text: "Bana ulaşmak için <a href='mailto:yakupyigitff@gmail.com'>yakupyigitff@gmail.com</a>",
+    footer_text: "© 2025 Yakup Yiğit | Tüm Hakları Saklıdır"
+  },
+  en: {
+    nav_about: "About",
+    nav_projects: "Projects",
+    nav_contact: "Contact",
+    hero_greeting: "Hello,<br>I am <span class='highlight'>Yakup Yiğit</span>",
+    hero_subtitle: "💻 Computer Engineer",
+    hero_btn: "🚀 View My Projects",
+    about_title: "✨ About Me",
+    about_text: "I am Yakup YİĞİT, born and raised in Giresun's Şebinkarahisar district. After completing high school there, I pursued a degree in Computer Engineering at Tokat Gaziosmanpaşa University. I develop projects in various fields, motivated by my interest in software development, mobile programming, and new technologies. I aim to continuously improve myself through research in web development, artificial intelligence, game development, and mobile applications. Creating innovative solutions to real-world problems is my greatest motivation. My interests include Web Development, Artificial Intelligence, Game Development, and Mobile App Development.",
+    skills_js: "⚡ JavaScript",
+    skills_java: "☕ Java",
+    skills_csharp: "⚛️ C#",
+    skills_python: "🔧 Python",
+    skills_flutter: "🐳 Flutter",
+    skills_htmlcss: "📐 HTML, CSS",
+    contact_title: "📩 Contact",
+    contact_text: "You can reach me at <a href='mailto:yakupyigitff@gmail.com'>yakupyigitff@gmail.com</a>",
+    footer_text: "© 2025 Yakup Yiğit | All Rights Reserved"
+  }
+};
 
-// Hamburger menü
+// Butonlar
+const trBtn = document.getElementById("trBtn");
+const enBtn = document.getElementById("enBtn");
+
+function setLanguage(lang) {
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    if(translations[lang][key]) el.innerHTML = translations[lang][key];
+  });
+
+  document.getElementById("heroGreeting").innerHTML = translations[lang].hero_greeting;
+  document.getElementById("heroSubtitle").innerHTML = translations[lang].hero_subtitle;
+  document.getElementById("heroBtn").innerHTML = translations[lang].hero_btn;
+  document.getElementById("aboutTitle").innerHTML = translations[lang].about_title;
+  document.getElementById("aboutText").innerHTML = translations[lang].about_text;
+  document.getElementById("skills_js").innerHTML = translations[lang].skills_js;
+  document.getElementById("skills_java").innerHTML = translations[lang].skills_java;
+  document.getElementById("skills_csharp").innerHTML = translations[lang].skills_csharp;
+  document.getElementById("skills_python").innerHTML = translations[lang].skills_python;
+  document.getElementById("skills_flutter").innerHTML = translations[lang].skills_flutter;
+  document.getElementById("skills_htmlcss").innerHTML = translations[lang].skills_htmlcss;
+  document.getElementById("contactTitle").innerHTML = translations[lang].contact_title;
+  document.getElementById("contactText").innerHTML = translations[lang].contact_text;
+  document.querySelector("footer p").innerHTML = translations[lang].footer_text;
+
+  if(lang === "tr") { trBtn.classList.add("active"); enBtn.classList.remove("active"); }
+  else { enBtn.classList.add("active"); trBtn.classList.remove("active"); }
+}
+
+trBtn.addEventListener("click", () => setLanguage("tr"));
+enBtn.addEventListener("click", () => setLanguage("en"));
+window.addEventListener("load", () => setLanguage("tr"));
+
+// Hamburger menu
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 hamburger.addEventListener("click", () => {
   navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
 });
 
-// Butona shake animasyonu
-const btn = document.querySelector(".btn");
-btn.addEventListener("click", () => {
-  btn.classList.add("shake");
-  setTimeout(() => btn.classList.remove("shake"), 500);
-});
-
-// Modal galeri
+// Modal Galeri
 const modal = document.getElementById("galleryModal");
-const modalImage = document.getElementById("modalImage");
+const modalImg = document.getElementById("modalImage");
 const modalThumbnails = document.getElementById("modalThumbnails");
-const closeBtn = document.querySelector(".close");
-let currentIndex = 0;
 let currentImages = [];
+let currentIndex = 0;
 
 document.querySelectorAll(".project-card img").forEach(img => {
-  img.addEventListener("click", (e) => {
-    const card = e.target.closest(".project-card");
-    currentImages = card.getAttribute("data-images").split(",");
+  img.addEventListener("click", () => {
+    currentImages = img.parentElement.getAttribute("data-images").split(",");
     currentIndex = 0;
-    modalImage.src = currentImages[currentIndex];
-    modal.style.display = "block";
-
-    // Thumbnail yenile
-    modalThumbnails.innerHTML = "";
-    currentImages.forEach((src, i) => {
-      let thumb = document.createElement("img");
-      thumb.src = src;
-      thumb.addEventListener("click", () => {
-        currentIndex = i;
-        modalImage.src = src;
-      });
-      modalThumbnails.appendChild(thumb);
-    });
+    openModal();
   });
 });
 
-// Ok butonları
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+function openModal() {
+  modal.style.display = "block";
+  modalImg.src = currentImages[currentIndex];
+  renderThumbnails();
+}
 
-prevBtn.addEventListener("click", () => {
+function renderThumbnails() {
+  modalThumbnails.innerHTML = "";
+  currentImages.forEach((src, idx) => {
+    const thumb = document.createElement("img");
+    thumb.src = src;
+    thumb.addEventListener("click", () => { currentIndex = idx; modalImg.src = currentImages[currentIndex]; });
+    modalThumbnails.appendChild(thumb);
+  });
+}
+
+modal.querySelector(".close").addEventListener("click", () => { modal.style.display = "none"; });
+modal.querySelector(".prev").addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-  modalImage.src = currentImages[currentIndex];
+  modalImg.src = currentImages[currentIndex];
 });
-
-nextBtn.addEventListener("click", () => {
+modal.querySelector(".next").addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % currentImages.length;
-  modalImage.src = currentImages[currentIndex];
-});
-
-// Klavye yön tuşları
-window.addEventListener("keydown", (e) => {
-  if (modal.style.display === "block") {
-    if (e.key === "ArrowLeft") prevBtn.click();
-    else if (e.key === "ArrowRight") nextBtn.click();
-    else if (e.key === "Escape") modal.style.display = "none";
-  }
-});
-
-// Modal kapatma (çarpıya basınca)
-closeBtn.addEventListener("click", () => { modal.style.display = "none"; });
-
-// Modal dışına tıklayınca kapatma
-window.addEventListener("click", (event) => {
-  if (event.target === modal) modal.style.display = "none";
+  modalImg.src = currentImages[currentIndex];
 });

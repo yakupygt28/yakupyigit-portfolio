@@ -13,11 +13,15 @@
     <nav class="navbar">
       <div class="logo">Yakup Yiğit</div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#hakkimda">Hakkımda</a></li>
-        <li><a href="#projeler">Projeler</a></li>
-        <li><a href="#iletisim">İletişim</a></li>
+        <li><a href="#hakkimda" data-key="nav_about">Hakkımda</a></li>
+        <li><a href="#projeler" data-key="nav_projects">Projeler</a></li>
+        <li><a href="#iletisim" data-key="nav_contact">İletişim</a></li>
       </ul>
       <div class="hamburger" id="hamburger">☰</div>
+      <div class="language-switcher">
+        <button id="trBtn" class="lang-btn active">TR</button>
+        <button id="enBtn" class="lang-btn">EN</button>
+      </div>
     </nav>
   </header>
 
@@ -25,9 +29,9 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-text">
-        <h1 class="fade-in">Merhaba,<br/>Ben <span class="highlight">Yakup Yiğit</span></h1>
-        <p class="fade-in-delay">💻 Bilgisayar Mühendisi</p>
-        <a href="#projeler" class="btn">🚀 Projelerime Göz At</a>
+        <h1 id="heroGreeting" class="fade-in">Merhaba,<br/>Ben <span class="highlight">Yakup Yiğit</span></h1>
+        <p id="heroSubtitle" class="fade-in-delay">💻 Bilgisayar Mühendisi</p>
+        <a id="heroBtn" href="#projeler" class="btn">🚀 Projelerime Göz At</a>
       </div>
       <div class="hero-img">
         <div class="glow-box">
@@ -38,19 +42,19 @@
 
     <!-- Hakkımda -->
     <section id="hakkimda" class="about">
-      <h2>✨ Hakkımda</h2>
-      <p>
+      <h2 id="aboutTitle">✨ Hakkımda</h2>
+      <p id="aboutText">
         Ben Yakup YİĞİT, Giresun’un Şebinkarahisar ilçesinde doğup büyüdüm. Liseye kadar eğitimimi burada tamamladıktan sonra, Tokat Gaziosmanpaşa Üniversitesi Bilgisayar Mühendisliği bölümünde lisans eğitimimi aldım. Yazılım geliştirme, mobil programlama ve yeni teknolojilere duyduğum ilgi ile farklı alanlarda projeler geliştirmekteyim. Web geliştirme, yapay zeka, oyun geliştirme ve mobil uygulama geliştirme konularında araştırmalar yaparak kendimi sürekli geliştirmeyi hedefliyorum. Gerçek dünyadaki problemlere yenilikçi çözümler üretmek en büyük motivasyonum. 
         İlgi alanlarım; <span class="highlight">Web Geliştirme</span>, <span class="highlight">Yapay Zeka</span>, 
         <span class="highlight">Oyun Geliştirme ve Programlama</span> ve <span class="highlight">Mobil Uygulama</span> geliştirme.
       </p>
       <ul class="skills">
-        <li>⚡ JavaScript</li>
-        <li>☕ Java</li>
-        <li>⚛️ C#</li>
-        <li>🔧 Python</li>
-        <li>🐳 Flutter</li>
-        <li>📐 HTML, CSS</li>
+        <li id="skills_js">⚡ JavaScript</li>
+        <li id="skills_java">☕ Java</li>
+        <li id="skills_csharp">⚛️ C#</li>
+        <li id="skills_python">🔧 Python</li>
+        <li id="skills_flutter">🐳 Flutter</li>
+        <li id="skills_htmlcss">📐 HTML, CSS</li>
       </ul>
     </section>
 
@@ -122,8 +126,8 @@
 
     <!-- İletişim -->
     <section id="iletisim" class="contact">
-      <h2>📩 İletişim</h2>
-      <p>Bana ulaşmak için <a href="mailto:yakupyigitff@gmail.com">yakupyigitff@gmail.com</a></p>
+      <h2 id="contactTitle">📩 İletişim</h2>
+      <p id="contactText">Bana ulaşmak için <a href="mailto:yakupyigitff@gmail.com">yakupyigitff@gmail.com</a></p>
     </section>
 
     <footer>
