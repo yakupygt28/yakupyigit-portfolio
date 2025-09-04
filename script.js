@@ -45,6 +45,8 @@ const trBtn = document.getElementById("trBtn");
 const enBtn = document.getElementById("enBtn");
 
 function setLanguage(lang) {
+  if(!translations[lang]) return;
+
   document.querySelectorAll("[data-key]").forEach(el => {
     const key = el.getAttribute("data-key");
     if(translations[lang][key]) el.innerHTML = translations[lang][key];
@@ -65,13 +67,16 @@ function setLanguage(lang) {
   document.getElementById("contactText").innerHTML = translations[lang].contact_text;
   document.querySelector("footer p").innerHTML = translations[lang].footer_text;
 
-  if(lang === "tr") { trBtn.classList.add("active"); enBtn.classList.remove("active"); }
-  else { enBtn.classList.add("active"); trBtn.classList.remove("active"); }
+  trBtn.classList.toggle("active", lang === "tr");
+  enBtn.classList.toggle("active", lang === "en");
 }
 
+// Eventler
 trBtn.addEventListener("click", () => setLanguage("tr"));
 enBtn.addEventListener("click", () => setLanguage("en"));
-window.addEventListener("load", () => setLanguage("tr"));
+
+// Sayfa yüklendiğinde
+document.addEventListener("DOMContentLoaded", () => setLanguage("tr"));
 
 // Hamburger menu
 const hamburger = document.getElementById("hamburger");
